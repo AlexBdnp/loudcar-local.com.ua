@@ -1,0 +1,67 @@
+<div id="filter-window" class="card card-default">
+  <div class="card-header">{{ heading_title }}</div>
+  <div class="card-footer text-left" style="margin: 5px 0">
+    <button type="button" id="button-filter" class="btn btn-primary">{{ button_filter }}</button>
+  </div>
+  <div class="list-group"> {% for filter_group in filter_groups %} <a class="list-group-item">{{ filter_group.name }}</a>
+    <div class="list-group-item">
+      <div id="filter-group{{ filter_group.filter_group_id }}">{% for filter in filter_group.filter %}
+        <div class="form-check">
+            {% if filter.filter_id in filter_category %}
+            <input class="form-check-input" type="checkbox" name="filter[]" value="{{ filter.filter_id }}" checked>
+            <label class="form-check-label">{{ filter.name }}
+            {% else %}
+            <input class="form-check-input" type="checkbox" name="filter[]" value="{{ filter.filter_id }}">
+            <label class="form-check-label">{{ filter.name }}
+            {% endif %}</label>
+        </div>
+        {% endfor %}</div>
+    </div>
+    {% endfor %}</div>
+</div>
+<!-- Скрипт кнопки -->
+<script type="text/javascript"><!--
+$(document).ready(function(){
+	$('#content h2').first().after('<div class="row" id="rowWithFilter"><div class="col-md-3 col-sm-5"><div id="mobFilterButton" class=" " style="background-color: #fbc02d; padding: 12px; z-index: 2; width: 40%; text-align: center;" onclick="modalFilterWindow_Appeare()"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span><span>Фильтр</span></div></div></div>');
+});
+
+$('#button-filter').on('click', function() {
+	filter = [];
+
+	$('input[name^=\'filter\']:checked').each(function(element) {
+		filter.push(this.value);
+	});
+
+	location = '{{ action }}&filter=' + filter.join(',');
+});
+
+function modalFilterWindow_Appeare() {
+	var width = $(window).width();
+	var height = $(window).height();
+	var overlay = $('.ajax-overlay');
+	let filterWindow = $('#filter-window');
+	$(document).remove(filterWindow);
+	
+	overlay.addClass('visible');
+	overlay.after(filterWindow);
+	filterWindow.css('width', '80%');
+	filterWindow.css('height', '80%');
+	filterWindow.css('overflow-y', 'scroll');
+	filterWindow.css('position', 'fixed');
+	filterWindow.css('top', '15%');
+	filterWindow.css('left', '10%');
+	filterWindow.css('visibility', 'visible');
+	filterWindow.css('z-index', '1000');
+	filterWindow.css('background-color', 'white');
+	filterWindow.css('padding', '10px');
+	overlay.on('click', modalFilterWindow_Close );
+}
+
+function modalFilterWindow_Close() {
+	var overlay = $('.ajax-overlay');
+	overlay.removeClass('visible');
+	$('body').removeClass('ajax-overlay-open');
+	overlay.unbind('click', modalFilterWindow_Close );
+	$('#filter-window').css('visibility', 'hidden');
+}
+//--></script>

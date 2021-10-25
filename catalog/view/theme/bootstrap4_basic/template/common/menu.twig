@@ -1,0 +1,45 @@
+{##
+/**
+ * @category   MonolithForge/OpenCart/Bootstrap4ThemeBasic
+ * @package    opencart-bootstrap4-theme-basic
+ * @author     dev@monolithforge.com
+ * @copyright  2018 Monolith Forge, LLC
+ * @license    https://www.monolithforge.com/license/opencart-bootstrap4-theme-basic.txt
+ * @version    3.0.2.0-bootstrap4-theme-basic-a7-dev
+ */
+#}
+<!-- MENU -->
+{% if categories %}
+<div class="container d-none d-md-block">
+  <nav class="navbar navbar-dark bg-primary navbar-expand-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-controls="navbar-ex1-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="navbar-nav">
+        {% for category in categories %}
+        {% if category.children %}
+        <li class="nav-item dropdown">
+		<a href="{{ category.href }}" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white;">{{ category.name }}</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner"> 
+			{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+              <ul class="list-unstyled">
+                {% for child in children %}
+                <li><a href="{{ child.href }}" class="dropdown-item">{{ child.name }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endfor %}</div>
+            <div class="dropdown-divider"></div>
+            <a href="{{ category.href }}" class="dropdown-item text-primary see-all">{{ text_all }} {{ category.name }}</a> </div>
+        </li>
+        {% else %}
+        <li class="nav-item"><a href="{{ category.href }}" class="nav-link">{{ category.name }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+</div>
+{% endif %}
+<!-- MENU END -->

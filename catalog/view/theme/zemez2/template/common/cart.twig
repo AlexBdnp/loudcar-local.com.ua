@@ -1,0 +1,72 @@
+<div class="box-cart pull-right">
+		<div id="cart" class="cart toggle-wrap">
+		<button type="button" data-loading-text="{{ text_loading }}" class="toggle">
+		<i class="fl-outicons-shopping-cart13"></i> 
+		<strong>Корзина</strong>
+		<span id="cart-total" class="cart-total">{{ text_items }}</span>
+		<span id="cart-total2" class="cart-total2">{{ count_products }}</span>
+		</button>
+		
+		<ul class="pull-right toggle_cont">
+			{% if products or vouchers %}
+			<li>
+				<table class="table">
+					<tbody>
+						{% for product in products %}
+						<tr>
+							<td class="text-center td-img"> 
+								{% if product.thumb %} 
+								<div class="image">
+									<a href="{{ product.href }}">
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail">
+									</a>
+								</div>
+								{% endif %}
+							</td>
+							<td class="text-left">
+								<div class="name">
+									<a href="{{ product.href }}">{{ product.name }}</a>
+								</div>
+							</td>
+							<td class="text-right">
+							<div><span class="price-cart"><i> x </i> {{ product.quantity }} <b>{{ product.total }}</b></span></div>
+							</td>
+							<td class="text-center">
+								<button type="button" onclick="cart.remove('{{ product.cart_id }}');" title="{{ button_remove }}" class="btn-danger btn-xs">
+									<i class="material-icons-close"></i>
+								</button>
+							</td>
+						</tr>
+						{% endfor %}
+						<!-- ДОБАВИТЬ ВАУЧЕРЫ -->
+					</tbody>
+				</table>
+			</li>
+			<li>
+				<table class="table total">
+					<tbody>
+					{% for total in totals %}
+					<tr>
+						<td class="text-left">
+							{{ total.title }} 
+						</td>
+						<td class="text-right">
+							<strong>{{ total.text }}</strong>
+						</td>
+					</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+				<div class="text-left">
+					<a class="btn" href="{{ cart }}">{{ text_cart }}</a>
+					<a class="btn-primary" href="{{ checkout }}">{{ text_checkout }}</a>
+				</div>
+			</li>
+			{% else %}
+			<li>
+				<p class="text-empty">{{ text_empty }}</p>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>

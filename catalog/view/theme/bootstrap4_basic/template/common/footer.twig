@@ -1,0 +1,52 @@
+{##
+/**
+ * @category   MonolithForge/OpenCart/Bootstrap4ThemeBasic
+ * @package    opencart-bootstrap4-theme-basic
+ * @author     dev@monolithforge.com
+ * @copyright  2018 Monolith Forge, LLC
+ * @license    https://www.monolithforge.com/license/opencart-bootstrap4-theme-basic.txt
+ * @version    3.0.2.0-bootstrap4-theme-basic-a7-dev
+ */
+#}
+<!-- FOOTER -->
+<footer class="bg-dark mt-4 p-4 text-light">
+  <div class="container">
+    <div class="row">
+      {% if informations %}
+      <div class="col">
+        <h5>{{ text_information }}</h5>
+        <ul class="list-unstyled">
+         {% for information in informations %}
+          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+		</ul>
+      </div>
+      {% endif %}
+      <!-- <div class="col">
+        <h5>{{ text_extra }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+          <li><a href="{{ special }}">{{ text_special }}</a></li>
+        </ul>
+      </div> -->
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr>
+            <p>{{ powered }}</p>
+        </div>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER END -->
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body></html>

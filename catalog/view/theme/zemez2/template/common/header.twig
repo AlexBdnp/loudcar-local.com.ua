@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ title }}</title>
+	<base href="{{ base }}" />
+	{% if description %}
+	<meta name="description" content="{{ description }}" />
+	{% endif %}
+	{% if keywords %}
+	<meta name="keywords" content="{{ keywords }}" />
+	{% endif %}
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+	
+	<!-- Bootstrap 3.3.5 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- Swiper -->
+	<link href="catalog/view/javascript/jquery/swiper/css/swiper.min.css" type="text/css" rel="stylesheet" media="screen"/>
+	<script src="catalog/view/javascript/zemez/swiper/swmin.js" type="text/javascript"></script>
+	<script src="catalog/view/javascript/jquery/swiper/js/swiper.jquery.js" type="text/javascript"></script>        
+	<!-- Zemez2 style -->
+    <link href="catalog/view/theme/zemez2/stylesheet/stylesheet.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="catalog/view/theme/zemez2/fonts/font1.css" rel="stylesheet">
+
+	
+</head>
+<body>
+<p id="gl_path" class="hidden">zemez2</p>
+<div id="page">
+<div id="page-preloader" class="visible">
+<div class="preloader"></div>
+</div>
+<div class="ie-warning">
+<a href="//windows.microsoft.com/en-us/internet-explorer/download-ie">
+<img src="catalog/view/theme/zemez2/image/warning_bar_0000_us.jpg" height="75" width="1170" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+</a>
+</div>
+<header>
+	<div class="header-top">
+	<div  class="homebuilder clearfix header-top-block">
+	<div class="tm-container container " >
+	<div class="tm-inner">
+	<div class="row row-level-1 ">
+	<div class="row-inner  clearfix">
+	<div class="col-lg-4 col-md-5 col-sm-5 col-xs-6 ">
+	<div class="col-inner ">
+						<div class="box-phones pull-left">
+	<address>
+		<a class="fa fa-phone" href="tel:{{ telephone }}">
+			{{ telephone }}
+		</a>
+	</address>
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-8 col-md-7 col-sm-7 col-xs-6 ">
+	<div class="col-inner ">
+	<!--
+	<div class="box-language pull-right">
+	<form action="https://livedemo00-opencart.template-help.com/opencart_prod-20763/index.php?route=common/language/language" method="post" enctype="multipart/form-data" id="form-language">
+	<div class="btn-group toggle-wrap">
+	<span class="toggle fa fa-angle-down">
+	<span class="hidden-xs">Language: </span>
+	<img class="hidden" width="16" height="11" src="catalog/language/en-gb/en-gb.png" alt="English" title="English">
+	Eng  
+	</span>
+	<ul class="toggle_cont list-unstyled">
+	<li>
+	<button class="language-select selected" type="button" name="en-gb">
+	<img class="hidden" width="16" height="11" src="catalog/language/en-gb/en-gb.png" alt="English" title="English" />
+	English 
+	</button>
+	</li>
+	<li>
+	<button class="language-select" type="button" name="ru-ru">
+	<img class="hidden" width="16" height="11" src="catalog/language/ru-ru/ru-ru.png" alt="Russian" title="Russian" />
+	Russian 
+	</button>
+	</li>
+	<li>
+	<button class="language-select" type="button" name="de-DE">
+	<img class="hidden" width="16" height="11" src="catalog/language/de-DE/de-DE.png" alt="Deutsch" title="Deutsch" />
+	Deutsch 
+	</button>
+	</li>
+	</ul>
+	</div>
+	<input type="hidden" name="code" value="" />
+	<input type="hidden" name="redirect" value="https://livedemo00-opencart.template-help.com/opencart_prod-20763/index.php?route=product/product&amp;product_id=28" />
+	</form>
+	</div>
+	<div class="box-currency pull-right">
+		<form action="https://livedemo00-opencart.template-help.com/opencart_prod-20763/index.php?route=common/currency/currency" method="post" enctype="multipart/form-data" id="form-currency">
+			<div class="btn-group toggle-wrap">
+				<span class="toggle fa fa-angle-down">
+				<span class="hidden-xs">Currency: </span>
+				USD 
+				</span>
+				<ul class="toggle_cont list-unstyled">
+				<li>
+				<button class="currency-select selected" type="button" name="USD">
+				USD Dollar 
+				</button>
+				</li>
+				<li>
+				<button class="currency-select" type="button" name="EUR">
+				EUR Euro 
+				</button>
+				</li>
+				<li>
+				<button class="currency-select" type="button" name="GBP">
+				GBP Pound 
+				</button>
+				</li>
+				</ul>
+			</div>
+			<input type="hidden" name="code" value="" />
+			<input type="hidden" name="redirect" value="https://livedemo00-opencart.template-help.com/opencart_prod-20763/index.php?route=product/product&amp;product_id=28" />
+		</form>
+	</div>
+	-->
+		<nav id="top-links" class="nav toggle-wrap pull-right">
+			<a href="#" class="toggle"><i class="material-icons-person"></i><span class="material-icons-arrow_drop_down">{{ text_account }}</span>
+			</a>
+			<ul class="toggle_cont">
+				{% if logged %}
+				<li><a href="{{ account }}">{{ text_account }}</a></li>
+				<li><a href="{{ order }}">{{ text_order }}</a></li>
+				<li><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+				<li><a href="{{ download }}">{{ text_download }}</a></li>
+				<li><a href="{{ logout }}">{{ text_logout }}</a></li>
+				{% else %}
+				<li><a href="{{ login }}"><i class="material-icons-vpn_key"></i><span>{{ text_login }}</span></a></li>
+				<li><a href="{{ register }}"><i class="material-icons-person_add"></i><span>{{ text_register }}</span></a></li>
+				{% endif %}
+				<li><a href="{{ checkout }}"><i class="material-icons-check_circle"></i><span>{{ text_checkout }}</span></a></li>
+				<li><a href="{{ contact }}"><i class="material-icons-email"></i><span>{{ text_contact }}</span></a></li>
+			</ul>
+		</nav>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<div  class="homebuilder clearfix top-block">
+	<div class="tm-container container " >
+	<div class="tm-inner">
+	<div class="row row-level-1 ">
+	<div class="row-inner  clearfix">
+	<div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 ">
+	<div class="col-inner ">
+		<h1 class="logo">
+		{% if logo %}
+		<a href="{{ home }}">
+		<img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive">
+		</a>
+		{% else %}
+          <a href="{{ home }}">{{ name }}</a>
+		{% endif %}
+		</h1>
+	</div>
+	</div>
+	<div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 ">
+	<div class="col-inner ">
+		{{ search }}
+		<div class="html-module">
+			<div class="box-heading"><h3>free-shipping</h3></div>
+			<div class="content">
+				<a class="button-dlvr" href="index.php?route=information/information&amp;information_id=6">
+				<i class="thin-icon-ambulance"></i>
+				<span><b>Информация о доставке</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 ">
+	<div class="col-inner ">
+		{{ cart }}
+		<a class="btn-wishlist pull-right" href="https://livedemo00-opencart.template-help.com/opencart_prod-20763/index.php?route=account/wishlist" id="wishlist-total"><i class="fl-outicons-heart373"></i><span>2</span></a>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+{{ menu }}

@@ -1,0 +1,67 @@
+<div class="list-group">
+  {% for category in categories %}
+  {% if category.category_id == category_id %} 
+  <a href="{{ category.href }}" class="list-group-item active">{{ category.name }}</a> 
+  {% if category.children %}
+  {% for child in category.children %}
+  {% if child.category_id == child_id %}
+  <a href="{{ child.href }}" class="list-group-item active">&nbsp;&nbsp;&nbsp;- {{ child.name }}</a> 
+  {% else %} 
+  <a href="{{ child.href }}" class="list-group-item">&nbsp;&nbsp;&nbsp;- {{ child.name }}</a>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% else %} <a href="{{ category.href }}" class="list-group-item">{{ category.name }}</a>
+  {% endif %}
+  {% endfor %}
+</div>
+<!-- 
+<div class="tm-container container ">
+<div class="tm-inner">
+<div class="row row-level-1 ">
+<div class="row-inner block-top clearfix">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+<div class="col-inner ">
+<div id="banner-category" class="banners row">
+  {% for category in categories %}
+  {% if category.category_id == category_id %} 
+  <!-- Для главных категорий 
+	<div class="col-sm-3 banner-top-1">
+		<div class="banner-box">		
+			<a class="link" href="{{ category.href }}">
+				<img src="image/{{ category.image }}" alt="{{ category.name }}" class="img-responsive">
+			</a>
+			<div class="s-desc">
+				<h4>{{ category.name }}</h4> 
+				<ul class="list-unstyled">
+					<li><a href="index.php?route=product/product&amp;product_id=46">Car Stereo Receivers</a></li>
+					<li><a href="index.php?route=product/product&amp;product_id=48">Car Stereo Installation</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+  {% endif %}
+  {% else %} 
+    <!-- Для главных категорий (неактивных) 
+	<div class="col-sm-3 banner-top-1">
+		<div class="banner-box">		
+			<a class="link" href="{{ category.href }}">
+				<img src="image/{{ category.image }}" alt="{{ category.name }}" class="img-responsive">
+			</a>
+			<div class="s-desc">
+				<h4>{{ category.name }}</h4> 
+				<ul class="list-unstyled">
+					<li><a href="index.php?route=product/product&amp;product_id=46">Car Stereo Receivers</a></li>
+					<li><a href="index.php?route=product/product&amp;product_id=48">Car Stereo Installation</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+  {% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->

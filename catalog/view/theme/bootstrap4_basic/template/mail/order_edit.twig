@@ -1,0 +1,31 @@
+{##
+/**
+ * @category   MonolithForge/OpenCart/Bootstrap4ThemeBasic
+ * @package    opencart-bootstrap4-theme-basic
+ * @author     dev@monolithforge.com
+ * @copyright  2018 Monolith Forge, LLC
+ * @license    https://www.monolithforge.com/license/opencart-bootstrap4-theme-basic.txt
+ * @version    3.0.2.0-bootstrap4-theme-basic-a7-dev
+ */
+#}
+{{ text_order_id }} {{ order_id }}
+{{ text_date_added }} {{ date_added }}
+
+{{ text_order_status }}
+
+{{ order_status }}
+
+{% if link %}
+{{ text_link }}
+
+{{ link }}
+{% endif %}
+{% if comment %}
+
+{{ text_comment }}
+
+{{ comment }}
+{{ text_footer }}
+{% else %} 
+{{ text_footer }}
+{% endif %}

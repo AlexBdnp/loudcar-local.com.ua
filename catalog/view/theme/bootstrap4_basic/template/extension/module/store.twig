@@ -1,0 +1,19 @@
+{##
+/**
+ * @category   MonolithForge/OpenCart/Bootstrap4ThemeBasic
+ * @package    opencart-bootstrap4-theme-basic
+ * @author     dev@monolithforge.com
+ * @copyright  2018 Monolith Forge, LLC
+ * @license    https://www.monolithforge.com/license/opencart-bootstrap4-theme-basic.txt
+ * @version    3.0.2.0-bootstrap4-theme-basic-a7-dev
+ */
+#}
+<div class="card card-default">
+  <div class="card-heading">{{ heading_title }}</div>
+  <p style="text-align: center;">{{ text_store }}</p>
+  {% for store in stores %}
+  {% if store.store_id == store_id %}<a href="{{ store.url }}"><b>{{ store.name }}</b></a><br />
+  {% else %}<a href="{{ store.url }}">{{ store.name }}</a><br />
+  {% endif %}
+  {% endfor %}<br />
+</div>

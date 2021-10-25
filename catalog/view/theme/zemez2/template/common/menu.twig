@@ -1,0 +1,60 @@
+<!-- MENU START -->
+	{% if categories %}
+	<div id="stuck" class="navigation stuck-menu">
+		<div class="container">
+			<div class="megamenu">
+				<ul class="sf-menu">
+					{% for category in categories %}
+					{% if category.children %}
+					<li>
+						<a href="{{ category.href }}" data-letters="{{ category.name }}">
+							<span>{{ category.name }}</span>
+						</a>
+						<ul class="simple_menu">
+						{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+							<li>
+								<ul class="simple_menu">
+									{% for child in children %}
+									<li><a href="{{ child.href }}">{{ child.name }}</a></li>
+									{% endfor %}
+								</ul>
+							</li>
+						{% endfor %}
+						</ul>
+					</li>
+					{% else %}
+					<li >
+					<a href="{{ category.href }}" data-letters="{{ category.name }}"><span>{{ category.name }}</span></a>
+					</li>
+					{% endif %}
+					{% endfor %}
+					<li >
+					<a href="index.php?route=product/special" data-letters="Sale"><span>Sale</span></a>
+					</li>
+				</ul>
+			</div>
+			<script>
+			;(function ($) {
+			$(window).load(function () {
+			var o = $('.sf-menu');
+			o.superfish();
+			o.find('li a').each(function () {
+			if ($(location).attr('href').indexOf($(this).attr('href')) >= 0){
+			$(this).addClass('active');
+			return;
+			}
+			})
+			if (o.parents('aside').length){
+			var width = $('.container').outerWidth() - $('aside').outerWidth();
+			o.find('.sf-mega').each(function () {
+			$(this).width(width);
+			})
+			}
+			});
+			})(jQuery);
+			</script>
+		</div>
+	</div>
+	{% endif %} 
+</header>
+<!-- MENU END -->

@@ -1,0 +1,66 @@
+	
+	<div id="stuck" class="navigation stuck-menu">
+		<div class="container">
+			<!-- <div id="style_switcher">
+				<div class="toggler"></div>
+				<p>The customization tool allows you to make color changes in your theme</p>
+				<ul id="color-box">
+					<li>
+						<div class="color_scheme color_scheme_1" data-scheme="color_scheme_1">&nbsp;</div>
+					</li>
+					<li>
+						<div class="color_scheme color_scheme_2" data-scheme="color_scheme_2">&nbsp;</div>
+					</li>
+					<li class="active">
+						<div class="color_scheme color_scheme_3" data-scheme="color_scheme_3">&nbsp;</div>
+					</li>
+					<li>
+						<div class="color_scheme color_scheme_4" data-scheme="color_scheme_4">&nbsp;</div>
+					</li>
+				</ul>
+			</div> -->
+			{% if categories %}
+			<div class="megamenu">
+				<ul class="sf-menu">
+				{% for category in categories %}
+				{% if category.children %}
+					<li><a href="{{ category.href }}" data-letters="{{ category.name }}"><span>{{ category.name }}</span></a>
+						{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+						<ul class="simple_menu">
+							{% for child in children %}
+							<li><a href="{{ child.href }}" data-letters="{{ child.name }}"><span>{{ child.name }}</span></a>
+							{% endfor %}
+						</ul>
+						{% endfor %}
+					</li>
+				{% else %}
+				<li><a href="{{ category.href }}" data-letters="{{ category.name }}"><span>{{ category.name }}</span></a>
+				{% endif %}
+				{% endfor %}
+				</ul>
+			</div>
+			<script>
+				;(function($) {
+					$(window).load(function() {
+						var o = $('.sf-menu');
+						o.superfish();
+						o.find('li a').each(function() {
+							if ($(location).attr('href').indexOf($(this).attr('href')) >= 0) {
+								$(this).addClass('active');
+								return;
+							}
+						})
+						if (o.parents('aside').length) {
+							var width = $('.container').outerWidth() - $('aside').outerWidth();
+							o.find('.sf-mega').each(function() {
+								$(this).width(width);
+							})
+						}
+					});
+				}
+				)(jQuery);
+			</script>
+			{% endif %}
+		</div>
+	</div>
+</header>
