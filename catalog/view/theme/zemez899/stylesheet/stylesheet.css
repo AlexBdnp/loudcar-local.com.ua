@@ -2433,7 +2433,6 @@ aside ul li>a:hover {
 .cart>button .cart-total span:nth-child(1) {
     position: absolute;
     top: 0;
-    left: -49px;
     width: 15px;
     height: 15px;
     text-align: center;
