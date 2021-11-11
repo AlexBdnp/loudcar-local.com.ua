@@ -50,11 +50,21 @@
 	padding-top: 10px;
 }
 
+@media(max-width: 1199px) {
+  #cart-total span:nth-child(1){
+    left: -29px;
+  }
+}
+
 @media(max-width: 767px) {
-  #cart-total {
+  /* div.cart>button .cart-total,div.cart>button strong {
+    display: none
+  } */
+
+  #cart-total{
     display: inline-block;
     position: absolute;
-    left: -49px;
+    left: 45px;
   }
   
   #cart-total > .cart-price{
