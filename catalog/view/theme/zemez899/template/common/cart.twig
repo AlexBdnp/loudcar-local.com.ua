@@ -1,12 +1,11 @@
 <div class="box-cart pull-right">
 	<div id="cart" class="cart toggle-wrap">
 		<button type="button" data-loading-text="{{ text_loading }}" class="toggle">
-			<i class="fl-outicons-shopping-cart13"></i> 
-			<strong>Корзина</strong>
+			<i class="fl-outicons-shopping-cart13"></i>
 			<span id="cart-total" class="cart-total"> 
 				{{ text_items }} 
 			</span>
-			<span id="cart-total2" class="cart-total2">{{ count_products }}</span>
+			{# <span id="cart-total2" class="cart-total2">{{ count_products }}</span> #}
 		</button>
 		<ul class="pull-right toggle_cont" style="display: none;">
 			{% if products or vouchers %}
