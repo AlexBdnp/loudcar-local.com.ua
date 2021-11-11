@@ -49,3 +49,15 @@
 .top-block {
 	padding-top: 10px;
 }
+
+@media(max-width: 767px) {
+  #cart-total {
+    display: inline-block;
+    position: absolute;
+    left: -49px;
+  }
+  
+  #cart-total > .cart-price{
+    display: none;
+  }
+}
